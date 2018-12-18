@@ -2,7 +2,7 @@
 Returns a link to a random, popular, or specific Wikipedia article, and links contained in the article. Sort of based on ["Six Degrees of Kevin Bacon"](https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon) but with Wikipedia articles instead of people.
 ## Usage
 ### Begin game with links
-Get random starting article and a random goal article. The starting article in this case is `Walter Sullivan (novelist)` and the goal article is `Enjoy It While It Lasts`. The 25 links are links to articles appearing in `Walter Sullivan (novelist)`.
+Get a random starting article and a random goal article. The starting article in this case is `Walter Sullivan (novelist)` and the goal article is `Enjoy It While It Lasts`. The 25 links are links to articles appearing in `Walter Sullivan (novelist)`.
 * Argument `type` can be either `rand`, `rand_pop`, or `specific`.
 * If `specific` is chosed for `type`, a third argument must be set for `get_start` (the title of the specific goal article).
 * If `rand_pop` is chosen, a connection to a database with a table containing popular articles must exist. (See below)
