@@ -39,7 +39,7 @@ $wikigame->check($limit, $article, $goal);
 ["found_article"]
 ```
 ### Get popular Wikipedia articles
-Writes [the most popular Wikipedia articles](https://en.wikipedia.org/wiki/Wikipedia:Multiyear_ranking_of_most_viewed_pages) to a table named 'popular'. This enables the use of `rand_pop` in `get_start`.
+Writes [the most popular Wikipedia articles](https://en.wikipedia.org/wiki/Wikipedia:Multiyear_ranking_of_most_viewed_pages) to a table named `popular`. This enables the use of `rand_pop` in `get_start`.
 ```
 <?php
 include_once 'c-wikigame.php';
