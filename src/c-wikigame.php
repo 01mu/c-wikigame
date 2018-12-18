@@ -13,8 +13,8 @@ class wikigame
     public function wikigame()
     {
         $this->agent = 'github.com/01mu/c-wikigame';
-        $this->context = stream_context_create(array("http" =>
-            array("header" => $this->agent)));
+        $ctx = array("http" => array("header" => $this->agent));
+        $this->context = stream_context_create($ctx);
     }
 
     public function get_popular()
@@ -121,6 +121,9 @@ class wikigame
 
     public function get_start($limit, $type, $specific)
     {
+        $articles = array();
+        $a_links = array();
+
         if(!isset($type) || !isset($limit))
         {
             $this->show_error('bad');
@@ -145,8 +148,8 @@ class wikigame
                 break;
             case 'specific':
                 $article_goal = $specific;
-                $article_goal_link = 'https://en.wikipedia.org/wiki/' .
-                    str_replace(" ", "_", $specific);
+                $rep = str_replace(" ", "_", $specific);
+                $article_goal_link = 'https://en.wikipedia.org/wiki/' . $rep;
                 break;
             default:
                 $this->show_error('bad');
@@ -164,12 +167,8 @@ class wikigame
         $links = $this->get_links($article_str);
         $final = $this->get_final_links($links, $limit);
 
-        $articles = array();
-
         $articles[] = $article_start;
         $articles[] = $article_goal;
-
-        $a_links = array();
 
         $a_links[] = $link_start;
         $a_links[] = $link_goal;
@@ -301,11 +300,9 @@ class wikigame
 
     private function get_redirect_url($url)
     {
-        stream_context_set_default(array(
-            'http' => array(
-                'method' => 'HEAD'
-            )
-        ));
+        $r = array('http' => array('method' => 'HEAD'));
+
+        stream_context_set_default($r);
 
         $headers = get_headers($url, 1);
 
@@ -321,11 +318,9 @@ class wikigame
     {
         $wiki_rand = 'https://en.wikipedia.org/wiki/Special:Random';
         $replace = 'https://en.wikipedia.org/wiki/';
+        $url = $this->get_redirect_url($wiki_rand);
 
-        $redirect = str_replace($replace, '',
-            $this->get_redirect_url($wiki_rand));
-
-        return $redirect;
+        return str_replace($replace, '', $url);
     }
 
     private function check_redirect($article)

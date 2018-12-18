@@ -13,6 +13,8 @@ $username = '';
 $pw = '';
 $db = '';
 
-$wikigame->conn($server, $username, $pw, $db);
-$wikigame->create_table();
-$wikigame->get_popular();
+//$wikigame->conn($server, $username, $pw, $db);
+//$wikigame->create_table('popular');
+//$wikigame->get_popular();
+
+$wikigame->get_start(25, 'specific', ' Dog');
