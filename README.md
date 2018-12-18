@@ -19,9 +19,11 @@ $specific = '';
 $wikigame->get_start($limit, $type, $specific);
 ```
 ```
-[["Walter Sullivan (novelist)","Enjoy It While It Lasts"],["https:\/\/en.wikipedia.org\/wiki\/Walter_Sullivan_(novelist)",
-"https:\/\/en.wikipedia.org\/wiki\/Enjoy It While It Lasts"],["Nashville, Tennessee","Southern United States","novelist","literary criticism",
-"Vanderbilt University","Fellowship of Southern Writers",
+[["Walter Sullivan (novelist)","Enjoy It While It Lasts"],
+["https:\/\/en.wikipedia.org\/wiki\/Walter_Sullivan_(novelist)",
+"https:\/\/en.wikipedia.org\/wiki\/Enjoy It While It Lasts"],
+["Nashville, Tennessee","Southern United States","novelist",
+"literary criticism","Vanderbilt University","Fellowship of Southern Writers",
 "Donald Davidson (poet)","United States Marine Corps","World War II",
 "Iowa City, Iowa","Master of Fine Arts","University of Iowa",
 "Andrew Nelson Lytle","Samuel F. Pickering, Jr.","Sewanee Review",
